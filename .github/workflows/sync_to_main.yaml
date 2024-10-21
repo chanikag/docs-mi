@@ -20,7 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Sync branch 4.3.0 with main'
-          branch: propertyM
+          branch: 4.3.0
           base: main
           title: 'Weekly Sync: branch 4.3.0 to main'
           body: 'Automated weekly sync from branch 4.3.0 to main.'
