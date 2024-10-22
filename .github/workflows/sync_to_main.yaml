@@ -3,7 +3,7 @@ name: Weekly Sync from branch '4.3.0' to 'main'
 # Schedule to run weekly on Friday at 3:15 PM UTC
 on:
   schedule:
-    - cron: '25 3 * * 2'  # Adjust this cron expression for your preferred time
+    - cron: '50 3 * * 2'  # Adjust this cron expression for your preferred time
 
 jobs:
   sync_pr:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: propertyM
+          ref: main
       - name: Reset 4.3.0 branch
         run: |
           git fetch origin main:main
@@ -20,4 +20,4 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: main
+          branch: propertyM
