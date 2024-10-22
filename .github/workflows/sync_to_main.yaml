@@ -10,14 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - name: Reset 4.3.0 branch
-        run: |
-          git fetch origin propertyM:propertyM
-          git reset --hard propertyM
       - name: create pull request
-        run: gh pr create -B propertyM -H main --title 'Sync main branch with 4.3.0 branch' --body 'This PR is to sync the main branch with the 4.3.0 branch.'
+        run: gh pr create -B main -H propertyM --title 'Sync main branch with 4.3.0 branch' --body 'This PR is to sync the main branch with the 4.3.0 branch.'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
