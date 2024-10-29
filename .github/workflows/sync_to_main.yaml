@@ -3,7 +3,7 @@ name: Weekly Sync from branch '4.3.0' to 'main'
 # Schedule to run weekly on Friday at 3:15 PM UTC
 on:
   schedule:
-    - cron: '14 7 * * 2'  # Adjust this cron expression for your preferred time
+    - cron: '5 2 * * 2'  # Adjust this cron expression for your preferred time
 
 jobs:
   sync_pr:
@@ -16,7 +16,6 @@ jobs:
       - name: Reset 4.3.0 branch
         run: |
           git fetch origin propertyM:propertyM
-          git reset --hard propertyM
       - name: create pull request
         run: gh pr create -B main -H propertyM --title 'Sync main branch with 4.3.0 branch' --body 'This PR is to sync the main branch with the 4.3.0 branch.'
         env:
